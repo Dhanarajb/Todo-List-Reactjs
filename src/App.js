@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './style.css';
 const TodoList = () => {
   const [list, setList] = useState([]);
   const [task, setTask] = useState('');
@@ -10,8 +10,9 @@ const TodoList = () => {
     setTask('');
   };
 
-  const removeTask = (index) => {
-    setList([...list.slice(0, index), ...list.slice(index + 1)]);
+  const removeTask = (id) => {
+    let newList = list.filter((item) => item.id !== id);
+    setList(newList);
   };
 
   return (
@@ -27,8 +28,8 @@ const TodoList = () => {
       <ul>
         {list.map((item, index) => (
           <li key={index}>
-            {item}
-            <button onClick={() => removeTask(index)}>x</button>
+            {index}- {item}
+            <button onClick={() => removeTask(item.id)}>x</button>
           </li>
         ))}
       </ul>
