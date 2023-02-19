@@ -33,9 +33,9 @@ const TodoList = () => {
 
   return (
     <div>
-//     Render a form that includes an input field and a button. 
+{/* //     Render a form that includes an input field and a button. 
 //     The input field is bound to the 'task' state and updates 
-//     it when the user types into it. The form's onSubmit event is set to the 'addTask' function.
+//     it when the user types into it. The form's onSubmit event is set to the 'addTask' function. */}
       <form onSubmit={addTask}>
         <input
           type="text"
@@ -45,9 +45,9 @@ const TodoList = () => {
         <button type="submit">Add Task</button>
       </form>
       <ul>
-//           Render an unordered list that displays the 'list' state as a list of items. 
+{/* //           Render an unordered list that displays the 'list' state as a list of items. 
 //           Each item includes a button that triggers the 'removeTask' function. 
-//           The key for each item is set to its index in the array.
+//           The key for each item is set to its index in the array. */}
         {list.map((item, index) => (
           <li key={index}>
             {index}- {item}
